@@ -1,0 +1,33 @@
+package com.akul.ratingsdataservice.resources;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.akul.ratingsdataservice.models.Rating;
+import com.akul.ratingsdataservice.models.UserRating;
+
+@RestController
+@RequestMapping("/ratingsdata")
+public class RatingsResource {
+
+	@RequestMapping("/{movieId}")
+	public Rating getRating(@PathVariable("movieId") String movieId) {
+		return new Rating(movieId, 6);
+	}
+	
+	@RequestMapping("/user/{userId}")
+	public UserRating getUserRating(@PathVariable("userId") String userId) {
+		List<Rating> ratings = Arrays.asList(
+				new Rating("50",4),
+				new Rating("100",3)
+			);
+		UserRating list = new UserRating();
+		list.setUserRating(ratings);
+		return list;
+	}
+}
+

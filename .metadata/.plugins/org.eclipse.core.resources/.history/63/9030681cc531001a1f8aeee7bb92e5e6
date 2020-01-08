@@ -1,0 +1,11 @@
+package com.akul.moviecatalogservice.resources;
+
+import org.springframework.web.client.RestTemplate;
+
+public class MovieInfo {
+	@Autowired
+	public RestTemplate restTemplate;
+
+	public MovieInfo() {
+	}
+}

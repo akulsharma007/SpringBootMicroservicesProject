@@ -1,0 +1,5 @@
+package com.akul.moviecatalogservice.models;
+
+public class Movie {
+
+}

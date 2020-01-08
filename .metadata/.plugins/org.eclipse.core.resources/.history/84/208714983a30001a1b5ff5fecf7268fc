@@ -1,0 +1,5 @@
+package com.akul.movieinfoservice.models;
+
+public class MovieSummary {
+
+}
